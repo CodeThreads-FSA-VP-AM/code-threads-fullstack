@@ -10,6 +10,7 @@ async function buildTables() {
 
     // drop tables in correct order
     try {
+      console.log(`Dropping all tables....`);
       await client.query(`
       DROP TABLE IF EXISTS sizes;
       DROP TABLE IF EXISTS reviews;
@@ -18,18 +19,16 @@ async function buildTables() {
       DROP TABLE IF EXISTS orders;
       DROP TABLE IF EXISTS products;
       DROP TABLE IF EXISTS users;
-      `)
+      `);
+      console.log(`finished dropping tables.`);
     } catch (error) {
-      console.error(error);
+      console.error(`Error dropping tables`);
     }
-
-
-
-
 
     // build tables in correct order
 
     try {
+      console.log(`Starting to build tables...`);
       await client.query(`
 
       CREATE TABLE users(
@@ -91,8 +90,9 @@ async function buildTables() {
       )
       
       `);
+      console.log(`Finished building tables.`);
     } catch (error) {
-      console.error(error);
+      console.error(`Error building tables.`);
     }
   } catch (error) {
     throw error;
