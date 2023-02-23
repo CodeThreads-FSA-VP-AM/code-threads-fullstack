@@ -9,6 +9,23 @@ async function buildTables() {
     client.connect();
 
     // drop tables in correct order
+    try {
+      await client.query(`
+      DROP TABLE IF EXISTS sizes;
+      DROP TABLE IF EXISTS reviews;
+      DROP TABLE IF EXISTS tags;
+      DROP TABLE IF EXISTS images;
+      DROP TABLE IF EXISTS orders;
+      DROP TABLE IF EXISTS products;
+      DROP TABLE IF EXISTS users;
+      `)
+    } catch (error) {
+      console.error(error);
+    }
+
+
+
+
 
     // build tables in correct order
 
