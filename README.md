@@ -1,4 +1,6 @@
-# Let's Build a Full Stack Application
+# Let's Build a Full Stack Application 😏
+
+DB Schema https://dbdiagram.io/d/63f68e3c296d97641d8307b9 [WIP]
 
 This full stack app boilerplate consists of:
 
